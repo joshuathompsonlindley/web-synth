@@ -4,8 +4,10 @@ import { ControlHeader } from "@/components/common/control-header";
 import { ControlRow } from "@/components/common/control-row";
 import { Knob } from "@/components/common/knob";
 import { ToggleButton, ToggleButtonGroup } from "@/components/common/toggle-button";
+import { HighPass } from "@/components/icons/high-pass";
+import { LowPass } from "@/components/icons/low-pass";
 import { MAX_FREQ, MAX_Q, MIN_FREQ, MIN_Q } from "@/synth-engine/consts";
-import { Filter, TrendingDown, TrendingUp } from "lucide-react";
+import { Filter } from "lucide-react";
 
 interface FilterControllerProps {
   filterType: BiquadFilterType;
@@ -36,12 +38,12 @@ export function FilterController({
           <ToggleButton
             enabled={filterType == "lowpass"}
             onClick={() => onFilterTypeChange("lowpass")}
-            icon={<TrendingDown className="w-4 h-4" />}
+            icon={<LowPass className="w-4 h-4" />}
           />
           <ToggleButton
             enabled={filterType == "highpass"}
             onClick={() => onFilterTypeChange("highpass")}
-            icon={<TrendingUp className="w-4 h-4" />}
+            icon={<HighPass className="w-4 h-4" />}
           />
         </ToggleButtonGroup>
         <ToggleButtonGroup title="SLOPE">

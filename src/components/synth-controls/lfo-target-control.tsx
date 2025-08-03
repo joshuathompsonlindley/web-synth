@@ -38,7 +38,7 @@ export function LfoTargetController({
 }: LfoTargetControllerProps) {
   return (
     <div>
-      <ControlHeader icon={<Target className="h-4 w-4" />} title="TARGETS" />
+      <ControlHeader icon={<Target className="h-4 w-4" />} title="MATRIX" />
       <ControlRow>
         <Knob
           value={lfoFilterDepth}

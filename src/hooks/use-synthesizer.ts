@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  DEFAULT_DETUNE,
   DEFAULT_FILTER_SLOPE,
   DEFAULT_FILTER_TYPE,
   DEFAULT_MIX_LEVEL,
@@ -12,7 +13,6 @@ import {
   MAX_SUSTAIN,
   MIN_ATTACK,
   MIN_DECAY,
-  MIN_DETUNE,
   MIN_FREQ,
   MIN_GLIDE,
   MIN_LFO_FILTER_DEPTH,
@@ -21,7 +21,7 @@ import {
   MIN_LFO_RATE,
   MIN_OCTAVE,
   MIN_Q,
-  MIN_RELEASE,
+  MIN_RELEASE
 } from "@/synth-engine/consts";
 import { createFilterChain, updateFilterChain } from "@/synth-engine/filter";
 import { LfoManager } from "@/synth-engine/lfo";
@@ -80,10 +80,10 @@ export function useSynthesizer() {
 
   const [osc1Waveform, setOsc1Waveform] = useState<OscillatorType>(DEFAULT_OSC_WAVEFORM);
   const [osc1Level, setOsc1Level] = useState(DEFAULT_MIX_LEVEL);
-  const [osc1Detune, setOsc1Detune] = useState(MIN_DETUNE);
+  const [osc1Detune, setOsc1Detune] = useState(DEFAULT_DETUNE);
   const [osc2Waveform, setOsc2Waveform] = useState<OscillatorType>(DEFAULT_OSC_WAVEFORM);
   const [osc2Level, setOsc2Level] = useState(DEFAULT_MIX_LEVEL);
-  const [osc2Detune, setOsc2Detune] = useState(MIN_DETUNE);
+  const [osc2Detune, setOsc2Detune] = useState(DEFAULT_DETUNE);
   const [oscillatorMix, setOscillatorMix] = useState(DEFAULT_MIX_LEVEL);
 
   const [currentOctave, setCurrentOctave] = useState(DEFAULT_OCTAVE);

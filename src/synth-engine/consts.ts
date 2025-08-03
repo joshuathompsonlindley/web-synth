@@ -39,4 +39,5 @@ export const DEFAULT_FILTER_TYPE: BiquadFilterType = "lowpass";
 export const DEFAULT_FILTER_SLOPE: 12 | 24 | 36 | 48 = 12;
 export const DEFAULT_OSC_WAVEFORM: OscillatorType = "sine";
 export const DEFAULT_MIX_LEVEL = 0.5;
+export const DEFAULT_DETUNE = 0;
 export const DEFAULT_VOICING_MODE = false; // false = polyphonic, true = monophonic

@@ -1,4 +1,5 @@
 import {
+  DEFAULT_DETUNE,
   DEFAULT_FILTER_SLOPE,
   DEFAULT_FILTER_TYPE,
   DEFAULT_MIX_LEVEL,
@@ -8,11 +9,10 @@ import {
   MAX_SUSTAIN,
   MIN_ATTACK,
   MIN_DECAY,
-  MIN_DETUNE,
   MIN_FREQ,
   MIN_GLIDE,
   MIN_Q,
-  MIN_RELEASE,
+  MIN_RELEASE
 } from "@/synth-engine/consts";
 import { connectLfoToFilters, createFilterChain } from "@/synth-engine/filter";
 import type { LfoGainNodes, NoteVoice } from "@/synth-engine/types";
@@ -50,10 +50,10 @@ export class OscillatorManager {
   private filterSlope: 12 | 24 | 36 | 48 = DEFAULT_FILTER_SLOPE;
   private osc1Waveform: OscillatorType = DEFAULT_OSC_WAVEFORM;
   private osc1Level = DEFAULT_MIX_LEVEL;
-  private osc1Detune = MIN_DETUNE;
+  private osc1Detune = DEFAULT_DETUNE;
   private osc2Waveform: OscillatorType = DEFAULT_OSC_WAVEFORM;
   private osc2Level = DEFAULT_MIX_LEVEL;
-  private osc2Detune = MIN_DETUNE;
+  private osc2Detune = DEFAULT_DETUNE;
   private oscillatorMix = DEFAULT_MIX_LEVEL;
 
   private noteNameToSemitoneOffsetInOctave: { [key: string]: number } = {

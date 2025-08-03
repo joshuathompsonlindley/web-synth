@@ -38,7 +38,7 @@ export function AmplitudeController({
 }: AmplitudeControllerProps) {
   return (
     <div>
-      <ControlHeader icon={<Activity className="w-4 h-4" />} title="AMP ENVELOPE" />
+      <ControlHeader icon={<Activity className="w-4 h-4" />} title="ENVELOPE" />
       <ControlRow>
         <Knob
           value={attackTime}
