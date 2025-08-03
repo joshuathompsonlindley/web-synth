@@ -94,9 +94,7 @@ export function useSynthesizer() {
     if (!audioContext && !isInitializedRef.current) {
       try {
         // Create a new AudioContext
-        const ctx = new (window.AudioContext ||
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (window as any).webkitAudioContext)();
+        const ctx = new window.AudioContext();
 
         // Check if the context is in a suspended state (e.g., due to user interaction requirements)
         if (ctx.state === "suspended") {
@@ -110,8 +108,7 @@ export function useSynthesizer() {
         // Connect the main gain node to the audio context destination
         try {
           mainGainNode.connect(ctx.destination);
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        } catch (error: any) {
+        } catch (error) {
           throw error;
         }
 
@@ -134,8 +131,7 @@ export function useSynthesizer() {
         );
 
         isInitializedRef.current = true;
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } catch (error: any) {
+      } catch (error) {
         throw error;
       }
     }

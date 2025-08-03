@@ -71,7 +71,8 @@ export function useMidi({ onNoteStart, onNoteStop, initAudio }: UseMidiProps) {
   // Callback to handle incoming MIDI messages
   const handleMidiMessage = useCallback(
     (event: MIDIMessageEvent) => {
-      // @ts-expect-error: MIDI data should never be null here
+      if (!event.data || event.data.length < 3) return; // Invalid MIDI message
+      
       const [status, midiNote, velocity] = event.data;
       const noteName = getNoteNameFromMidiNumber(midiNote);
 
@@ -90,7 +91,7 @@ export function useMidi({ onNoteStart, onNoteStop, initAudio }: UseMidiProps) {
 
   // Effect to request MIDI access and set up device listeners
   useEffect(() => {
-    if (!navigator.requestMIDIAccess) {
+    if (!navigator.requestMIDIAccess({ sysex: false })) {
       return;
     }
 
