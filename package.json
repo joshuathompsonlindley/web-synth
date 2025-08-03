@@ -9,19 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "geist": "1.4.2",
     "lucide-react": "0.536.0",
     "next": "15.4.5",
-    "react": "18",
-    "react-dom": "18",
-    "react-knob-headless": "0.4.0"
+    "react": "^19",
+    "react-dom": "^19"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
     "prettier": "^3.6.2",
