@@ -12,8 +12,8 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "geist": "1.4.2",
-    "lucide-react": "0.536.0",
-    "next": "15.5.2",
+    "lucide-react": "0.544.0",
+    "next": "15.4.6",
     "react": "^19",
     "react-dom": "^19"
   },
