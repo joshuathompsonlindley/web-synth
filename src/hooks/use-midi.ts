@@ -95,7 +95,7 @@ export function useMidi({ onNoteStart, onNoteStop, initAudio }: UseMidiProps) {
       if (!navigator.requestMIDIAccess({ sysex: false })) {
         return;
       }
-    catch (error) {
+    } catch (_) {
       console.log("MIDI not supported");
       return;
     }
