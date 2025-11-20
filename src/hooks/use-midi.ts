@@ -91,7 +91,12 @@ export function useMidi({ onNoteStart, onNoteStop, initAudio }: UseMidiProps) {
 
   // Effect to request MIDI access and set up device listeners
   useEffect(() => {
-    if (!navigator.requestMIDIAccess({ sysex: false })) {
+    try {
+      if (!navigator.requestMIDIAccess({ sysex: false })) {
+        return;
+      }
+    catch (error) {
+      console.log("MIDI not supported");
       return;
     }
 
